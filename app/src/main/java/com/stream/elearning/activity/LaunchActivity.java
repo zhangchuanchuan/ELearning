@@ -1,5 +1,8 @@
 package com.stream.elearning.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import com.stream.elearning.base.BaseActivity;
 
 /**
@@ -14,4 +17,20 @@ import com.stream.elearning.base.BaseActivity;
  */
 
 public class LaunchActivity extends BaseActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        startMainActivity();
+    }
+
+    /**
+     * 开启MainActivity
+     */
+    private void startMainActivity() {
+        Intent intent = new Intent();
+        intent.setClass(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }
